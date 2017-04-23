@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #warning_message{
+            color: red;
+            display: none;
+        }
+        html{
+            height: 96%;
+            width: 99%;
+        }
+        body{
+            height: 100%;
+            width: 100%;
+            background: url("362_12.png");
+        }
+        main{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+        }
+        #centercontainer{
+            display: block;
+            position: static;
+            width: 300px;
+            height: 300px;;
+            padding: 15px;
+            border: 1px solid #d6e9c6;
+            border-radius: 4px;
+            color: #3c763d;
+            background-color: #dff0d8;
+        }
+        #opponents{
+            padding-left:10px;
+        }
+        #gamefield{
+            display: none;
+            height: 100%;
+            width: 100%;
+        }
+        #about{
+            padding-bottom: 0px;
+            width: 100%;
+            background-color: rgba(112,112,110,0.54);
+            border: 1px solid #d6e9c6;
+            border-radius: 4px;
+        }
+        #login{
+            justify-self: flex-start;
+            align-self: flex-start;
+        }
+        ol{
+             counter-reset: li; /* Инициируем счетчик */
+             list-style: none; /* Удаляем нумерацию по умолчанию */
+             *list-style: decimal; /* Оставляем нумерацию по умолчанию для IE6/7 */
+             font: 15px 'trebuchet MS', 'lucida sans';
+             padding: 0;
+             margin-bottom: 4em;
+             text-shadow: 0 1px 0 rgba(255,255,255,.5);
+         }
+        li{
+            position: relative;
+            display: block;
+            padding: .4em .4em .4em 2em;
+            *padding: .4em;
+            margin: .5em 0;
+            background: #ddd;
+            color: #444;
+            text-decoration: none;
+            border-radius: .3em;
+            transition: all .3s ease-out;
+        }
+
+        li:hover{
+            background: #eee;
+        }
+
+        li:hover:before{
+            transform: rotate(360deg);
+        }
+
+        li:before{
+            content: counter(li);
+            counter-increment: li;
+            position: absolute;
+            left: -1.3em;
+            top: 50%;
+            margin-top: -1.3em;
+            background: #87ceeb;
+            height: 2em;
+            width: 2em;
+            line-height: 2em;
+            border: .3em solid #fff;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 2em;
+            transition: all .3s ease-out;
+        }
+        svg{
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<main>
+    <div id="login"></div>
+    <div id="centercontainer">
+        <div id="opponents">
+            <ol id="opponentslist">
+            </ol>
+            <span id="warning_message">Оппонентов нет!</span>
+        </div>
+        <div id="gamefield">
+            <svg id="gamecanvas">
+                <line x1="0px" y1="0px" x2="0px" y2="300px" id="mainline" style="stroke: black; stroke-width: 2;"></line>
+                <line x1="100px" y1="0px" x2="100px" y2="300px" id="mainline" style="stroke: black; stroke-width: 2;"></line>
+                <line x1="200px" y1="0px" x2="200px" y2="300px" id="mainline" style="stroke: black; stroke-width: 2;"></line>
+                <line x1="300px" y1="0px" x2="300px" y2="300px" id="mainline" style="stroke: black; stroke-width: 2;"></line>
+                <line x1="0px" y1="0px" x2="300px" y2="0px" id="mainline" style="stroke: black; stroke-width: 2;"></line>
+                <line x1="0px" y1="100px" x2="300px" y2="100px" id="mainline" style="stroke: black; stroke-width: 2;"></line>
+                <line x1="0px" y1="200px" x2="300px" y2="200px" id="mainline" style="stroke: black; stroke-width: 2;"></line>
+                <line x1="0px" y1="300px" x2="300px" y2="300px" id="mainline" style="stroke: black; stroke-width: 2;"></line>
+            </svg>
+        </div>
+    </div>
+</main>
+<footer id="about">Creator: Andrey</footer>
+<script src="src.js"></script>
+</body>
+</html>
